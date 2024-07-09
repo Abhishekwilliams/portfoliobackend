@@ -9,7 +9,7 @@ import os
 load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
-CORS(app, resources={r"/send-email": {"origins": "https://main--abhishekwilliamsportfolio.netlify.app/"}})
+CORS(app, resources={r"/send-email": {"origins": "*"}})
 
 @app.route('/send-email', methods=['POST'])
 @cross_origin(origin='localhost', headers=['Content-Type', 'Authorization'])
